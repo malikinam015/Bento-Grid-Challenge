@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Bio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, sans-serif;
+        }
+
+        body {
+            background: #0f0f11;
+            color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 950px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+
+        .center {
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent);
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            background: #354b6d;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2,
+        h3 {
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #a5b4fc;
+            text-decoration: none;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 6px;
+            margin: 4px 0;
+            font-size: 0.9rem;
+        }
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .tag {
+            background: #27272a;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        button {
+            width: 100%;
+            background: #fff;
+            color: #0f0f11;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .span-2 {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="card span-2 center">
+            <div class="avatar"></div>
+            <h2>Inam Ullah Khan</h2>
+            <p>Frontend Engineering Intern</p>
+        </div>
+        <div class="card span-2">
+            <h3>Featured Projects</h3>
+            <a href="#" target="_blank">🚀 Modern E-Commerce Platform</a>
+            <a href="#" target="_blank">📦 Next-Gen UI Design Systems</a>
+        </div>
+        <div class="card">
+            <h3>Social Hub</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+                <a href="#" style="text-align:center">GitHub</a>
+                <a href="#" style="text-align:center">LinkedIn</a>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Tech Stack</h3>
+            <div class="tags">
+                <span class="tag">HTML5</span><span class="tag">CSS Grid</span><span class="tag">Vanilla JS</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Share Portfolio</h3>
+            <button
+                onclick="navigator.clipboard.writeText(window.location.href).then(() => this.innerText = 'Copied!').catch(() => this.innerText = 'Failed')">Share
+                Profile</button>
+        </div>
+        <div class="card">
+            <h3>Availability</h3>
+            <p>🟢 Building Milestone 1</p>
+        </div>
+    </div>
+</body>
+
+</html>
